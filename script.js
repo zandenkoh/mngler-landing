@@ -66,3 +66,53 @@
       });
     });
   });
+  
+document.querySelector('.cta-button.load-item').addEventListener('click', function () {
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: 'smooth' // Smooth scrolling effect
+  });
+});
+
+    const button = document.getElementById('join-mngler-btn');
+    const emailInput = document.querySelector('.email-input');
+    const emailField = document.getElementById('email-field');
+
+    button.addEventListener('click', () => {
+      // Move the button down
+      gsap.to(button, { y: 60, duration: 0.3 });
+
+      // Change button text and disable it
+      button.innerHTML = 'Save email';
+      button.disabled = true;
+      button.style.fontSize = '17px'
+
+      // Fade in email input and focus
+      emailInput.style.opacity = 1;
+      emailInput.style.transform = 'translateY(0)';
+      setTimeout(() => emailField.focus(), 500); // Focus after animation
+    });
+
+    // Enable button when a valid email is entered
+    emailField.addEventListener('input', () => {
+      const email = emailField.value.trim();
+      const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      button.disabled = !isValidEmail;
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
