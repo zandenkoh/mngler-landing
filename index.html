@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Domine:wght@400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Titan+One&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a47fae704c.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
 </head>
 <body>
   <nav class="top-nav">
@@ -17,11 +18,11 @@
       <h1>Mngler</h1>
     </div>
     <div class="nav-buttons load-item">
-      <div class="nav-button" id="about" title="About">
+      <div class="nav-button" id="blog" title="Blog">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
         <p>Blog</p>
       </div>
-      <div class="nav-button" id="features" title="Features">
+      <div class="nav-button" id="updates" title="Updates">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg>
         <p>Updates</p>
       </div>
@@ -36,6 +37,7 @@
     <div class="header-content">
       <h2 class="load-item">The ultimate search engine for teens</h2>
       <p class="load-item">Find seniors, feedback and opportunities</p>
+
       <button class="cta-button load-item" title="Get started">Get started</button>
     </div>
     <div class="header-image-container load-item">
@@ -86,7 +88,7 @@
       <div class="point animate-item">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" /></svg>
         <h2>Grow</h2>
-        <h3>As you gather achievements on your profile, companies you apply to will see.</h3>
+        <h3>As you gather achievements on your profile, companies you apply to will see them.</h3>
       </div>
     </section>
     <section class="section-testimonial animate-item">
@@ -101,7 +103,12 @@
       <img src="https://cdn.prod.website-files.com/679c404529ee8648732e64f5/679c454cdd83c2c460d9b4a4_IMG_6514-p-500.png" class="animate-item">
       <h2 class="animate-item">Mngler. Unlock your inner sigma.</h2>
       <p class="animate-item">Join the waitlist. Be the first to use our beta.</p>
-      <button class="cta-button-2 animate-item" title="Join Mngler">Join Mngler</button>
+      <div class="form-container animate-item">
+        <div class="email-input">
+          <input type="email" id="email-field" placeholder="Enter your email" />
+        </div>
+        <button class="cta-button-2" title="Join Mngler" id="join-mngler-btn">Join Mngler</button>
+      </div>
     </section>
   </main>
 
