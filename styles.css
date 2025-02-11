@@ -109,7 +109,8 @@ header {
 }
 
 .header-content {
-  width: 500px;
+  width: 50%;
+  min-width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -117,24 +118,25 @@ header {
 }
 
 .header-content h2 {
-  font-size: 45px;
+  font-size: 50px;
   font-weight: 600;
   margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .header-content p {
   font-size: 25px;
   font-weight: 300;
   margin: 0;
-  font-style: italic;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .header-content .cta-button {
   width: 170px;
   border-radius: 50px;
-  background: #0b66c3;
+  background: #216be4;
   font-size: 20px;
   font-weight: 600;
   color: #fff;
@@ -145,12 +147,12 @@ header {
 }
 
 .header-content .cta-button:hover {
-  background: #08519c;
+  background: #1a55b6;
   cursor: pointer;
 }
 
 .header-image-container {
-  width: auto;
+  width: 35%;
   flex: 1;
   display: flex;
   justify-content: center;
@@ -162,7 +164,6 @@ header {
 .header-image-container img {
   width: auto;
   height: 100%;
-  aspect-ratio: 5:1;
   animation: wobble 4s infinite ease-in-out;
 }
 
@@ -307,6 +308,8 @@ main section {
   align-items: center;
   box-sizing: border-box;
   height: 70vh;
+  background: #f3f2f0;
+  margin-bottom: 20vh;;
 }
 
 .section-2 .point {
@@ -332,7 +335,8 @@ main section {
   margin: 0;
   margin-bottom: 15px;
   line-height: 1.5;
-  text-align: center
+  text-align: center;
+  color: #ad4124;
 }
 
 .section-2 .point h3 {
@@ -348,12 +352,13 @@ main section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 70vh;
 }
 
 .section-testimonial .quote-image {
   background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
   width: 50px;
   height: 50px;
   background-image: url("https://cdn.prod.website-files.com/679c404529ee8648732e64f5/679c404529ee8648732e65af_quotation.svg");
@@ -389,6 +394,7 @@ main section {
   justify-content: center;
   align-items: center;
   height: 80vh;
+  margin-bottom: 15vh;
 }
 
 .section-3 img {
@@ -413,10 +419,38 @@ main section {
   text-align: center;
 }
 
+.form-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+}
+
+.email-input {
+      opacity: 0;
+      transform: translateY(-20px);
+      margin-top: 10px;
+      position: absolute;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.email-input input {
+      padding: 15px 18px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 7px;
+      width: 400px;
+      outline: none;
+}
+
+.email-input input:focus {
+  border: 2px solid #000;
+}
+
 .section-3 button {
-  width: 170px;
+  width: 190px;
   border-radius: 50px;
-  background: #0b66c3;
+  background: #216be4;
   font-size: 20px;
   font-weight: 600;
   color: #fff;
@@ -426,11 +460,22 @@ main section {
   z-index: 2;
   margin-top: 10px;
   user-select: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .section-3 button:hover {
-  background: #08519c;
+  background: #1a55b6;
+  transition: background 0s ease-in-out;
   cursor: pointer;
+}
+
+.cta-button-2:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.cta-button-2:disabled:hover {
+  background: #ccc;
 }
 
 .load-item {
