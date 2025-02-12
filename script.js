@@ -23,6 +23,7 @@
           if (entry.isIntersecting) {
             const featureId = entry.target.id;
             phoneContainer.style.backgroundImage = `url(${images[featureId]})`;
+            phoneContainer.style.backgroundSize = 'contain'
           }
         });
       },
@@ -80,7 +81,7 @@ document.querySelector('.cta-button.load-item').addEventListener('click', functi
 
     button.addEventListener('click', () => {
       // Move the button down
-      gsap.to(button, { y: 60, duration: 0.3 });
+      gsap.to(button, { y: 60, duration: 0.4 });
 
       // Change button text and disable it
       button.innerHTML = 'Save email';
@@ -100,11 +101,60 @@ document.querySelector('.cta-button.load-item').addEventListener('click', functi
       button.disabled = !isValidEmail;
     });
 
+const menuButton = document.getElementById('menuButton');
+const menuPopup = document.getElementById('menuPopup');
+let isOpen = false;
+
+menuButton.addEventListener('click', () => {
+    if (!isOpen) {
+      menuPopup.style.display = 'flex';
+         // Show before transition
+        setTimeout(() => {
+            menuPopup.classList.add('show'); // Start expanding height
+            
+        }, 100); // Small delay to allow transition
+    } else {
+        menuPopup.classList.remove('show'); // Collapse height
+        setTimeout(() => {
+            menuPopup.style.display = 'none'; // Hide after transition
+        }, 0); // Matches CSS transition duration (0.3s)
+    }
+
+    isOpen = !isOpen;
+
+    menuButton.innerHTML = isOpen ? `
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
+    ` : `
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+    `;
+});
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const headerImage = document.querySelector(".header-image-container");
+    let initialTop = 65; // Initial `top` percentage
 
+    window.addEventListener("scroll", function () {
+        let scrollY = window.scrollY;
+        let parallaxAmount = scrollY * 0.25; // Adjust speed factor (smaller = slower)
 
+        headerImage.style.top = `calc(${initialTop}% + ${parallaxAmount}px)`;
+    });
+    
+    const headerContent = document.querySelector(".header-content");
+
+    window.addEventListener("scroll", function () {
+        let scrollY = window.scrollY;
+        let parallaxAmount = scrollY * 0.4; // Adjust speed factor (smaller = slower)
+
+        headerContent.style.top = `calc(${initialTop}% - ${parallaxAmount}px)`;
+    });
+});
 
 
 
